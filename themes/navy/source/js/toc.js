@@ -4,7 +4,7 @@
 let isTocExists = false;
 let articleHeadingLocations = [];
 let tocItems = [];
-let currentTocItem, lastTocItem, currentTocItemLi, lastTocItemLi, windowHeight, docHeight;
+let currentTocItem, currentTocItemLi, windowHeight, docHeight;
 
 function updateArticleHeadingPosition() {
   windowHeight = document.documentElement.clientHeight;
@@ -66,18 +66,34 @@ function updateArticleHeadingPosition() {
 
   isTocExists = tocItems.length > 0;
 
+  function curlHashByPosition() {
+    const scrollTop = window.pageYOffset;
+    if (isTocExists && (scrollTop + windowHeight < docHeight)) {
+      for (let tocItemLocation of articleHeadingLocations) {
+        if (scrollTop >= tocItemLocation[0] && scrollTop < tocItemLocation[1]) {
+          return tocItemLocation[2];
+        }
+      }
+    }
+    return null;
+  }
+
   function activeTocItemByUrlHash() {
     if (isTocExists) {
-      lastTocItem = currentTocItem;
-      const urlHash = decodeURIComponent(window.location.hash.split('#')[1]);
+      const urlHash = curlHashByPosition();
+      if (!urlHash) {
+        return;
+      }
+
+      const activeItems = document.querySelectorAll('.active');
+      activeItems.forEach(item => {
+        item.classList.remove('active');
+      });
+
       currentTocItem = tocItems.includes(urlHash) ? urlHash : tocItems[0];// 优先定位URL Hash
       if (currentTocItem) {
         currentTocItemLi = document.querySelector(`a.toc-link[href="#${currentTocItem}"]`).parentNode;
         currentTocItemLi.classList.add('active');
-      }
-      if (lastTocItem) {
-        lastTocItemLi = document.querySelector(`a.toc-link[href="#${lastTocItem}"]`).parentNode;
-        lastTocItemLi.classList.remove('active');
       }
     }
   }
@@ -94,16 +110,10 @@ function updateArticleHeadingPosition() {
   window.addEventListener('scroll', function(e) {
     // 重新获取文档和窗口高度，人为改变窗口大小时有机会触发页面滚动。
     updateArticleHeadingPosition();
+    activeTocItemByUrlHash();
 
     const scrollTop = window.pageYOffset;
-    if (isTocExists && (scrollTop + windowHeight < docHeight)) {
-      for (let tocItemLocation of articleHeadingLocations) {
-        if (scrollTop >= tocItemLocation[0] && scrollTop < tocItemLocation[1]) {
-          window.location.hash = `#${tocItemLocation[2]}`;
-          break;
-        }
-      }
-    }
+
     // Back To Top按钮设置
     const THRESHOLD = 50;
     const backToTopOverlay = document.getElementsByClassName('back-to-top')[0];
@@ -115,10 +125,6 @@ function updateArticleHeadingPosition() {
     const scrollPercent = scrollTop / (docHeight - windowHeight);
     const scrollPercentRounded = Math.round(scrollPercent * 100);
     document.querySelectorAll('#scrollpercent > span')[0].innerHTML = scrollPercentRounded.toString();
-  });
-
-  window.addEventListener('hashchange', function() {
-    activeTocItemByUrlHash();
   });
 }());
 
