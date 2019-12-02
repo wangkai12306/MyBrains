@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+node_modules/
+source/zh-cn/hearts/
+*.log
+db.json
+public/
+.deploy*/
+package-lock.json

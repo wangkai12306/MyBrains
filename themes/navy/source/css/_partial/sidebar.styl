@@ -1,0 +1,72 @@
+#sidebar
+  width: sidebar-width
+  float: left
+  padding-bottom: 40px
+  opacity: 0.8
+  margin-left: sidebar-width * -1
+  display: none
+  @media mq-normal
+    display: block
+  &.fixed
+    position: absolute
+    top: 0
+    bottom: 0
+
+#sidebar-inner
+  @extend .inner
+  overflow-x: hidden
+  overflow-y: auto
+  width: sidebar-width
+  .fixed &
+    position: fixed
+    top: 0
+    bottom: 0
+
+.sidebar-title
+  margin-top: 40px
+  padding: 10px 0
+  font-family: font-title
+  font-weight: bold
+  color: color-link
+  display: inline-block
+  border-top: 1px solid color-border
+  line-height: 1
+
+.sidebar-link
+  font-family: font-title
+  display: block
+  color: color-default
+  text-decoration: none
+  padding: 7px 0
+  line-height: 1
+  position: relative
+  width: 100%
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+  &.current
+    color: color-link
+  &:hover
+    color: $color-link-hover
+  span
+    display: inline-block
+    vertical-align: top
+    word-wrap: break-word
+    white-space: normal
+    line-height: 1.1
+
+//新加样式
+
+.sidebar
+  li
+    ol
+      display: none
+      padding-left: 1.2em
+    &.open > ol
+        display: block
+  li > a > span
+    padding-left : 14px
+  li > a > i
+    width: 12px
+  li > a > i + span
+    padding-left : 0px

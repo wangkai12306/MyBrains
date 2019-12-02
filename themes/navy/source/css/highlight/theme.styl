@@ -1,0 +1,45 @@
+$highlight_theme = hexo-config("highlight_theme")
+
+$blockquote-color = #6a737d
+
+
+if $highlight_theme == "normal"
+  $highlight-background   = #f7f7f7
+  $highlight-current-line = #efefef
+  $highlight-selection    = #d6d6d6
+  $highlight-foreground   = #4d4d4c
+  $highlight-comment      = #77B767
+  $highlight-number       = #6897BB
+
+  $highlight-red          = #c82829
+  $highlight-orange       = #f5871f
+  $highlight-yellow       = #eab700
+  $highlight-green        = #718c00
+  $highlight-aqua         = #3e999f
+  $highlight-blue         = #4271ae
+  $highlight-purple       = #8959a8
+  $highlight-gutter       = {
+    color: #869194,
+    bg-color: #eff2f3
+  }
+
+if $highlight_theme == "night"
+  $highlight-background   = #2b2b2b
+  $highlight-current-line = #323232
+  $highlight-selection    = #214283
+  $highlight-foreground   = #A9B7C6
+  $highlight-comment      = #77B767
+  $highlight-number       = #6897BB
+
+  $highlight-red          = #cc6666
+  $highlight-orange       = #de935f
+  $highlight-yellow       = #f0c674
+  $highlight-green        = #77B767
+  $highlight-aqua         = #8abeb7
+  $highlight-blue         = #81a2be
+  $highlight-purple       = #9876AA
+  $highlight-gutter       = {
+    color: lighten($highlight-background, 50%),
+    bg-color: darken($highlight-background, 20%)
+  }
+

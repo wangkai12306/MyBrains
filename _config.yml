@@ -1,0 +1,22 @@
+title: "我的大脑"
+subtitle: "我的大脑"
+description: "大脑里关于计算机的所有记忆"
+author: "WangKai"
+language: zh-cn
+timezone: UTC
+
+url: https://mybrains.com/brains
+root: /brains/
+permalink: news/:year/:month/:day/:title/
+new_post_name: :year-:month-:day-:title.md # File name of new posts
+post_asset_folder: true
+per_page: 0
+
+theme: navy
+
+highlight:
+  enable: true
+  line_number: true
+
+
+

@@ -1,0 +1,227 @@
+// https://github.com/equinusocio/vsc-material-theme
+@require "theme.styl"
+@require "diff.styl"
+
+languages = "json" "js" "javascript" "python" "ruby" "xml" "html" "css" "perl" "sql" "coffeescript" "java" "scala" "kotlin" "c" "c\+\+" "go" "less" "sass" "scss" "stylus" "styl" "typescript" "ts" "bash"
+wordWrap = !hexo-config("rootConfig.highlight.line_number") && hexo-config("code_word_wrap")
+
+
+$code-header-height = 30px
+
+.code-header
+  height: $code-header-height
+  background-color: darken($highlight-background, 20%)
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  .code-language
+    display: flex
+    padding: 2px 16px
+    flex-grow: 1
+  .copy-notice
+    display: flex
+    padding: 2px 16px
+    width: 100px
+  .copy-button
+    display: flex
+    width: 40px
+    align-items: center
+    padding: 2px 16px
+    cursor: pointer
+    transition: all 0.5s
+    &:hover
+        color: $color-link-hover
+
+
+// Placeholder: $code-block
+$code-block {
+  overflow: auto;
+  margin: 20px 0;
+  padding: 0;
+  font-family: $code-font-family;
+  font-size $code-font-size;
+  color: $highlight-foreground;
+  background: $highlight-background;
+  line-height: $line-height-code-block;
+}
+
+figure.highlight
+  position: relative
+  table
+    th,td
+      padding 0 !important
+      border 0 !important
+
+
+code {
+  font-family: $font-mono
+  padding: 2px 4px;
+  word-wrap: break-word;
+  color: $code-foreground;
+  background: $code-background;
+  border-radius: $code-border-radius;
+  font-size $code-font-size;
+}
+
+pre {
+  @extend $code-block;
+  padding: 10px;
+
+  code {
+    font-family: $code-font-family
+    padding: 0;
+    color: $highlight-foreground;
+    background: none;
+    text-shadow: none;
+  }
+}
+
+//.article-container
+.article-content .highlight {
+  @extend $code-block;
+  border-radius: 1px
+
+  pre {
+    border: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  table {
+    margin: 0;
+    width: auto;
+    border: none;
+  }
+
+  td {
+    border: none;
+    padding: 0;
+  }
+
+  figcaption {
+    clearfix();
+    font-size: 1em;
+    color: $highlight-foreground;
+    line-height: 1em;
+    margin-bottom: 1em;
+
+    a {
+      float: right;
+      color: $highlight-foreground;
+
+      &:hover { border-bottom-color: $highlight-foreground; }
+    }
+  }
+
+
+  .gutter pre {
+    padding-left: 10px
+    padding-right: 10px
+    color: $highlight-gutter.color
+    text-align: right
+    background-color: $highlight-gutter.bg-color
+  }
+
+  .code pre {
+    width: 100%
+    padding-left: 10px
+    padding-right: 10px
+    background-color: $highlight-background
+
+    .line {
+      .attr {
+        color: $highlight-purple
+      }
+    }
+  }
+
+  .line { height: 20px; }
+}
+
+
+.gutter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gist table {
+  width: auto;
+
+  td { border: none; }
+}
+
+// For diff highlight
+pre .deletion { background: $highlight-deletion; }
+pre .addition { background: $highlight-addition; }
+pre .meta     { color: $highlight-purple; }
+
+pre {
+
+  .comment { color: $highlight-comment; }
+
+  .variable
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo {
+    color: $highlight-red
+  }
+
+  .number {
+    color: $highlight-number
+  }
+
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+  .command {
+    color: $highlight-orange
+  }
+
+  .ruby .class .title
+  .css .rules .attribute
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+  .special
+  .formula {
+    color: $highlight-green;
+  }
+
+  .title
+  .css .hexcolor {
+    color: $highlight-aqua;
+  }
+
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title {
+    color: $highlight-blue;
+  }
+
+  .keyword
+  .javascript .function {
+    color: $highlight-purple;
+  }
+
+}

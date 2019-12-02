@@ -1,0 +1,96 @@
+######################################################################################
+#  代码高亮主题设置
+######################################################################################
+
+highlight_theme: 'night'
+
+
+######################################################################################
+#  Mermaid Chart设置
+######################################################################################
+## mermaid url https://github.com/knsv/mermaid
+mermaid:
+  enable: true
+  version: "8.0.0"
+  options:
+    theme: neutral
+    gantt:
+      axisFormat: '%m/%d'
+
+######################################################################################
+#  导航菜单语言设置
+######################################################################################
+
+languages:
+  zh-cn:
+    name: 简体中文
+    disqus_lang: zh
+
+######################################################################################
+#  导航菜单设置
+######################################################################################
+
+menu:
+  bigdata: /bigdata/
+  program: /program/
+  # hearts: /hearts/
+
+######################################################################################
+#  侧边栏导航设置
+######################################################################################
+
+sidebar:
+  #--------------------------------------------
+  #  big data
+  #--------------------------------------------
+  bigdata:
+    dw:
+      dw: dw.html
+    git:
+      git: git.html
+    hadoop:
+      base: base.html
+      install: install.html
+    hbase:
+      base: base.html
+    hive:
+      base: base.html
+      optimize: optimize.html
+      fuction: function.html
+    kafka:
+      base: base.html
+    linux:
+      base: base.html
+    mysql:
+      base: base.html
+      optimize: optimize.html
+    nginx:
+      base: base.html
+    spark:
+      base: base.html
+      core: core.html
+      operator: operator.html
+      sql: sql.html
+      streaming: streaming.html
+      optimize: optimize.html
+
+  #--------------------------------------------
+  #  program
+  #--------------------------------------------
+  program:
+    java:
+      java: java.html
+    python:
+      base: base.html
+      jinja: jinja.html
+      flask: flask.html
+    scala:
+      base: base.html
+    shell:
+      base: base.html
+
+  #--------------------------------------------
+  #  hearts
+  #--------------------------------------------
+  hearts:
+    20191115_confused: 20191115_confused.html

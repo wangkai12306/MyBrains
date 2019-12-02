@@ -1,0 +1,97 @@
+######################################################################################
+#  导航菜单设置
+######################################################################################
+
+menu:
+  bigdata: 大数据
+  program: 编程语言
+  hearts: 心路
+
+index:
+  get_started: 帮助文档
+
+######################################################################################
+#  页面导航按钮设置
+######################################################################################
+
+page:
+  contents: 本页目录
+  back_to_top: 回到顶部
+  improve: 改进本文
+  prev: 上一页
+  next: 下一页
+  last_updated: 上次更新：%s
+
+######################################################################################
+#  侧边栏导航设置
+######################################################################################
+
+sidebar:
+  #--------------------------------------------
+  #  big data
+  #--------------------------------------------
+  bigdata:
+    dw:
+      - 数据仓库
+      - dw: 数仓基础
+    git:
+      - Git
+      - git: Git仓库搭建
+    hadoop:
+      - Hadoop
+      - base: Hadoop基础
+        install: 集群搭建
+    hbase:
+      - HBase
+      - base: HBase基础
+    hive:
+      - Hive
+      - base: Hive基础
+        optimize: 优化
+        fuction: 窗口函数
+    kafka:
+      - Kafka
+      - base: Kafka基础
+    linux:
+      - Linix
+      - base: Linux基础
+    mysql:
+      - Mysql
+      - base: Mysql基础
+        optimize: 优化
+    nginx:
+      - Nginx
+      - base: Nginx基础
+    spark:
+      - Spark
+      - base: Spark基础
+        core: Core
+        operator: 算子
+        sql: SQL
+        streaming: Streaming
+        optimize: 优化
+
+  #--------------------------------------------
+  #  program
+  #--------------------------------------------
+  program:
+    java:
+      - Java
+      - java: Java
+    python:
+      - Python
+      - base: Python基础
+        jinja: Jinja基础
+        flask: Flask基础
+    scala:
+      - Scala
+      - base: Scala基础
+    shell:
+      - Shell
+      - base: Shell基础
+
+  #--------------------------------------------
+  #  hearts
+  #--------------------------------------------
+  hearts:
+    20191115_confused: 20191115 迷茫

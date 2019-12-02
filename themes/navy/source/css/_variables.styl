@@ -1,0 +1,93 @@
+//
+// Variables
+// =================================================
+
+// Config
+support-for-ie = false
+vendor-prefixes = webkit moz ms official
+
+// Colors
+// colors for use across theme.
+// --------------------------------------------------
+
+color-default = #444
+color-gray = #999
+color-border = #e3e3e3
+color-navy = hsl(210, 25%, 12%)
+color-link = #0e83cd
+$color-link-hover = lighten(color-link, 10%)
+
+
+$whitesmoke   = #f5f5f5
+$gainsboro    = #eee
+$gray-lighter = #ddd
+$grey-light   = #ccc
+$grey         = #bbb
+$grey-dark    = #999
+$grey-dim     = #666
+$black-light  = #555
+$black-dim    = #333
+$black-deep   = #222
+$red          = #ff2a2a
+$blue-bright  = #87daff
+$blue         = #0684bd
+$blue-deep    = #262a30
+$orange       = #fc6423
+
+
+// Typography
+// Font, line-height, and elements colors.
+// --------------------------------------------------
+
+get_font_family(config) {
+  custom_family = hexo-config('font.' + config + '.family')
+  return custom_family is a 'string' ? custom_family : null
+}
+
+// Font families.
+
+font-sans = "Helvetica Neue", Helvetica, Arial, sans-serif
+font-serif = Garamond, Georgia, "Times New Roman", serif
+$font-mono = "Source Code Pro", Monaco, Menlo, Consolas, monospace
+font-title = Lato, font-sans
+font-size = 15px
+line-height = 1.6em
+
+// Layout
+max-width = 1400px
+gutter-width = 20px
+sidebar-width = 270px
+$toc-width = 200px
+mobile-nav-width = 260px
+
+// Media queries
+mq-mobile = "screen and (max-width: 768px)"
+mq-normal = "screen and (min-width: 769px)"
+mq-tablet = "screen and (min-width: 480px)"
+
+
+
+// Code & Code Blocks
+// --------------------------------------------------
+$code-font-family = consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, "Helvetica Neue"
+$code-font-size = 14px
+$code-font-size = unit(hexo-config('font.codes.size'), px) if hexo-config('font.codes.size') is a 'unit'
+$code-border-radius = 3px
+$code-foreground = $black-light
+$code-background = $gainsboro
+$line-height-code-block = 1.6em
+
+
+// Table
+// --------------------------------------------------
+$table-width                    = 100%
+$table-border-color             = $gray-lighter
+$table-font-size                = 14px
+$table-content-alignment        = left
+$table-content-vertical         = middle
+$table-th-font-weight           = 700
+$table-cell-padding             = 8px
+$table-cell-border-right-color  = $gainsboro
+$table-cell-border-bottom-color = $gray-lighter
+$table-row-odd-bg-color         = #f9f9f9
+$table-row-hover-bg-color       = $whitesmoke
