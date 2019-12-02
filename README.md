@@ -9,20 +9,6 @@
    npm install -g hexo-cli
    ```
 
-### What about Windows?
-
-建议使用Intellij + Gitbash命令行集成
-
-1. 安装Git
-2. 设置Intellij Idea。`File` > `Setting` > `Tools` > `Terminal` > `Shell Path`为如下值（具体值参照Git安装目录）
-
-   ```bash
-    "C:\Program Files\Git\bin\bash.exe" --login -i
-   ```
-   
-   ![](assets/images/intellij_git_bash.png)
-
-
 ## 安装依赖
 
 ```bash
@@ -47,10 +33,13 @@ hexo server
 http://localhost:4000/
 ```
 
-## 发布到Team Wiki
+## 发布到github
 
 ```bash
-npm run deploy
+git add .
+git commit -m "xxx"
+git remote add origin https://github.com/wangkai12306/MyBrains.git
+git push -u origin master
 ```
 
 
@@ -62,9 +51,9 @@ npm run deploy
 .    
 ├── source                   # 文档源码
 |   ├── zh-cn                # 文档中文源码
-|   |   ├── api              # 导航菜单1
-|   |   ├── crm              # 导航菜单2
-|   |   ├── docs             # 导航菜单3
+|   |   ├── bigdata          # 导航菜单1
+|   |   ├── hearts           # 导航菜单2
+|   |   ├── program          # 导航菜单3
 └── themes                   # 主题
     └── navy                 # navy主题
         ├── languages        # 主题语言
@@ -74,7 +63,7 @@ npm run deploy
 
 ## 添加新文档
 
-在`source` > `zh-cn` > `api | crm | docs`目录下按照文档路径添加新文档（Markdown），文件名要求为英文。
+在`source` > `zh-cn` > `bigdata | hearts | program`目录下按照文档路径添加新文档（Markdown），文件名要求为英文。
 
 > 使用`hexo generate`命令将markdown解析成同名HTML文件到`public`下对应目录。
   建议使用`hexo g -w`实时watch和解析markdown
