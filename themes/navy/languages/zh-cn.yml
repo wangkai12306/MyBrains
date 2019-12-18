@@ -47,8 +47,8 @@ sidebar:
     hive:
       - Hive
       - base: Hive基础
-        optimize: 优化
         fuction: 窗口函数
+        optimize: 优化
     kafka:
       - Kafka
       - base: Kafka基础
@@ -75,14 +75,21 @@ sidebar:
   #  program
   #--------------------------------------------
   program:
+    datastructures:
+      - 数据结构
+      - base: 数据结构基础
     java:
       - Java
-      - java: Java
+      - base: 基础
+        advanced: 进阶
+        collection: 集合
+        jvm: JVM
+        experience: 实操经验
     python:
       - Python
       - base: Python基础
-        jinja: Jinja基础
-        flask: Flask基础
+        jinja: Jinja
+        flask: Flask
     scala:
       - Scala
       - base: Scala基础
@@ -95,3 +102,4 @@ sidebar:
   #--------------------------------------------
   hearts:
     20191115_confused: 20191115 迷茫
+    20191201_suffering: 20191201 纠结

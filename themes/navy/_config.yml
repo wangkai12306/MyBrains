@@ -33,7 +33,7 @@ languages:
 menu:
   bigdata: /bigdata/
   program: /program/
-  # hearts: /hearts/
+  hearts: /hearts/
 
 ######################################################################################
 #  侧边栏导航设置
@@ -55,8 +55,8 @@ sidebar:
       base: base.html
     hive:
       base: base.html
-      optimize: optimize.html
       fuction: function.html
+      optimize: optimize.html
     kafka:
       base: base.html
     linux:
@@ -70,16 +70,22 @@ sidebar:
       base: base.html
       core: core.html
       operator: operator.html
+      optimize: optimize.html
       sql: sql.html
       streaming: streaming.html
-      optimize: optimize.html
 
   #--------------------------------------------
   #  program
   #--------------------------------------------
   program:
+    datastructures:
+      base: base.html
     java:
-      java: java.html
+      base: base.html
+      advanced: advanced.html
+      collection: collection.html
+      jvm: jvm.html
+      experience: experience.html
     python:
       base: base.html
       jinja: jinja.html
@@ -94,3 +100,4 @@ sidebar:
   #--------------------------------------------
   hearts:
     20191115_confused: 20191115_confused.html
+    20191201_suffering: 20191201_suffering.html
