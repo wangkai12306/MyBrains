@@ -8,7 +8,7 @@
   "scripts": {
     "build": "hexo generate && gulp",
     "eslint": "eslint .",
-    "deploy": "hexo clean && hexo g && tar -zcvf data-team-docs.tar.gz public && scp ./data-team-docs.tar.gz ec2-user@wiki.chiefclouds.com:/tmp/ && ssh ec2-user@wiki.chiefclouds.com 'tar -zxvf /tmp/data-team-docs.tar.gz -C /tmp/;sudo rm -rf /usr/local/nginx/html/data-team-docs;sudo cp -r /tmp/public /usr/local/nginx/html/data-team-docs' && rm ./data-team-docs.tar.gz && echo 'SUCCESS'"
+    "deploy": "hexo clean && hexo g && tar -zcvf data-team-docs.tar.gz public && scp ./data-team-docs.tar.gz ec2-user@wiki.xxxxxxxx.com:/tmp/ && ssh ec2-user@wiki.xxxxxxxx.com 'tar -zxvf /tmp/data-team-docs.tar.gz -C /tmp/;sudo rm -rf /usr/local/nginx/html/data-team-docs;sudo cp -r /tmp/public /usr/local/nginx/html/data-team-docs' && rm ./data-team-docs.tar.gz && echo 'SUCCESS'"
   },
   "dependencies": {
     "cheerio": "^0.22.0",

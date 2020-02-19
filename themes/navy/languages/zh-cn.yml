@@ -5,6 +5,8 @@
 menu:
   bigdata: 大数据
   program: 编程语言
+  azure: 微软云
+  network: 网络
   hearts: 心路
 
 index:
@@ -44,6 +46,7 @@ sidebar:
     hbase:
       - HBase
       - base: HBase基础
+      - advanced: HBase进阶
     hive:
       - Hive
       - base: Hive基础
@@ -81,9 +84,11 @@ sidebar:
     java:
       - Java
       - base: 基础
-        advanced: 进阶
+        io: IO
+        thread: 多线程
         collection: 集合
         jvm: JVM
+        reflect: 反射
         experience: 实操经验
     python:
       - Python
@@ -96,6 +101,20 @@ sidebar:
     shell:
       - Shell
       - base: Shell基础
+
+  #--------------------------------------------
+  #  azure
+  #--------------------------------------------
+  azure:
+    keyvault:
+      - Key vault
+      - base: 基础
+
+  #--------------------------------------------
+  #  newwork
+  #--------------------------------------------
+  network:
+    base: 网络基础
 
   #--------------------------------------------
   #  hearts

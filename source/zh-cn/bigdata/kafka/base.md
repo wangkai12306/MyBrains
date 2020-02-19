@@ -7,7 +7,7 @@ Kafka是分布式发布-订阅消息系统
 缓冲和削峰，解耦，冗余，健壮性
 
 ## 特性：
-1. FIFO：topic的partition内部是FIFO，partition之间不是，可以通过设置partition=1来实现
+1. FIFO：topic的partition内部是FIFO，partition之间不保证有序，可以通过设置partition=1来实现
 2. 高性能：MB/s吞吐量(零拷贝)
 3. 持久性：消息顺序持久化到磁盘上，不会丢失，顺序读写效率高
 4. 分布式：数据副本冗余、流量负载均衡、可扩展
@@ -31,11 +31,12 @@ broker 是消息的代理，Producers往Brokers里面的指定Topic中写消息�
 2. isr由每个partition的leader负责维护，follower定时从leader同步消息的副本(如果超时同步或者超过延时条数，leader都会将该folloer从isr中移除)
 
 ## kafka为什么那么快
-1. Cache Filesystem Cache PageCache缓存(Linux系统的读写缓存)
-2. 顺序写 由于现代的操作系统提供了预读和写技术，磁盘的顺序写大多数情况下比随机写内存还要快。
-3. Zero-copy 零拷技术减少拷贝次数(本质上是将用户的应用程序缓冲区和OS的内核缓冲区映射到同一块物理内存，减少内核缓冲区到程序缓冲区到拷贝)
-4. Batching of Messages 批量量处理。合并小的请求，然后以流的方式进行交互，直顶网络上限。
-5. Pull 拉模式 使用拉模式进行消息的获取消费，与消费端处理能力相符。
+一般影响消息系统性能的原因主要有：磁盘性能，大量小型的IO，以及过多的字节拷贝。而kafka可以一一解决
+1. read-ahead and write-behind：Linux的读写缓存，以大的data block为单位预读数据，将多个小的逻辑写合并为一次大型物理磁盘写入
+2. 顺序写：由于现代的操作系统提供了预读和写技术，磁盘的顺序写(磁头寻址时间短)大多数情况下比随机写内存还要快。
+3. Zero-copy：传统的socket IO是`硬盘->内核缓冲区->用户缓冲区->socket缓冲区->NIC缓冲区`，而sendfile是`硬盘->内核缓冲区->NIC缓冲区`
+4. 网络批处理：网络请求将多个消息打包成一组，使整组消息分担网络中往返的开销。
+5. Pull：使用拉模式进行消息的获取消费，与消费端处理能力相符。
 
 ## producer的ack
 

@@ -241,7 +241,7 @@ hexo.extend.helper.register('url_for_lang', function(path) {
 });
 
 hexo.extend.helper.register('raw_link', function(path) {
-  return 'http://gitlab.chiefclouds.cn/data-platform/data-team-docs/edit/master/source/' + path;
+  return 'https://github.com/wangkai12306/MyBrains/tree/master/source/' + path;
 });
 
 hexo.extend.helper.register('page_anchor', function(str) {
