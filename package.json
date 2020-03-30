@@ -8,7 +8,7 @@
   "scripts": {
     "build": "hexo generate && gulp",
     "eslint": "eslint .",
-    "deploy": "hexo clean && hexo g && tar -zcvf brain.tar.gz public/ && scp brain.tar.gz wangkai-vm@40.73.247.229:/tmp/ && ssh wangkai-vm@40.73.247.229 'tar -zxvf /tmp/brain.tar.gz -C /tmp/;rm -rf /opt/brain/public;cp -r /tmp/public /opt/brain/brains' && rm -rf brain.tar.gz  && echo 'Deploy success'"
+    "deploy": "hexo clean && hexo g && tar -zcvf brain.tar.gz public/ && scp brain.tar.gz wangkai-vm@40.73.247.229:/tmp/ && ssh wangkai-vm@40.73.247.229 'tar -zxvf /tmp/brain.tar.gz -C /tmp/;rm -rf /opt/brain/brains;cp -r /tmp/public /opt/brain/brains' && rm -rf brain.tar.gz  && echo 'Deploy success'"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
