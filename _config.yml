@@ -18,5 +18,5 @@ highlight:
   enable: true
   line_number: true
 
-
-
+marked:
+  smartypants: false # avoid the quote convert from English type to Chinese type.
