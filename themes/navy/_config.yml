@@ -76,6 +76,8 @@ sidebar:
       optimize: optimize.html
       sql: sql.html
       streaming: streaming.html
+    docker:
+      base: base.html
 
   #--------------------------------------------
   #  program
